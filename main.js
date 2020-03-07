@@ -78,7 +78,7 @@ var quizContent = `
 <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
 <h1>` + localStorage.getItem("highscore") + `</h1><br> 
 
-<button onclick="clearScore()">Clear score!</button><button onclick="resetGame()">Play Again!</button>
+<button onclick="clearScore()">Clear score!</button> <button onclick="resetGame()">Play Again!</button>
 
 `;
 
@@ -103,12 +103,15 @@ timer = null;
 
 document.getElementById("timeLeft").innerHTML = timeLeft;
 
-var quizContent = `
-<h1>
-    JavaScript Quiz!
-</h1>
+var quizContent =  `
 <h3>
-    Click to play!   
+Welcome to the coding quiz! You will have 3 minutes to complete the quiz.
+You will be tested on how quickly you can correctly answer the following questions.
+Each incorrect answer will take 15 seconds off of the timer. The quiz will end 
+once you have either answered all the questions or the timer runs out. Good luck!
+</h3>
+<h3>
+Click Start button to begin the quiz!  
 </h3>
 <button onclick="start()">Start!</button>`;
 
@@ -127,7 +130,7 @@ score += 20;
 next();
 }
 
-//loops through the questions 
+//loops the questions until the lenght end
 function next() {
 currentQuestion++;
 
