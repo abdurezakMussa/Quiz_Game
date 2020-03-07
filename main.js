@@ -41,7 +41,7 @@ document.getElementById("timeLeft").innerHTML = timeLeft;
 timer = setInterval(function() {
     timeLeft--;
     document.getElementById("timeLeft").innerHTML = timeLeft;
-//proceed to end the game function when timer is below 0 at any time
+//proceed to end the quiz function when timer is below 0 at any time
     if (timeLeft <= 0) {
         clearInterval(timer);
         endGame(); 
@@ -51,7 +51,7 @@ timer = setInterval(function() {
 next();
 }
 
-//stop the timer to end the game 
+//stop the timer to end the quiz 
 function endGame() {
 clearInterval(timer);
 
@@ -78,19 +78,17 @@ var quizContent = `
 <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
 <h1>` + localStorage.getItem("highscore") + `</h1><br> 
 
-<button onclick="clearScore()">Clear score!</button> <button onclick="resetGame()">Play Again!</button>
-
-`;
+<button onclick="clearScore()">Clear score!</button> <button onclick="resetGame()">Play Again!</button>`;
 
 document.getElementById("quizBody").innerHTML = quizContent;
 }
 
-//clears the score name and value in the local storage if the user selects 'clear score'
+//clears the score name and value in the local storage and return to main page
 function clearScore() {
-localStorage.setItem("highscore", "");
-localStorage.setItem("highscoreName",  "");
+localStorage.setItem("highscore", " ");
+localStorage.setItem("highscoreName",  " ");
 
-resetGame();
+//resetGame();
 }
 
 //reset the game 
@@ -105,7 +103,7 @@ document.getElementById("timeLeft").innerHTML = timeLeft;
 
 var quizContent =  `
 <h3>
-Welcome to the coding quiz! You will have 3 minutes to complete the quiz.
+Welcome to the coding quiz! You will have 75 seconds to complete the quiz.
 You will be tested on how quickly you can correctly answer the following questions.
 Each incorrect answer will take 15 seconds off of the timer. The quiz will end 
 once you have either answered all the questions or the timer runs out. Good luck!
