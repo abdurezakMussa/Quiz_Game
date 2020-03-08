@@ -12,7 +12,7 @@
 
 #nav {
     display: block;
-    background-color: white;
+    background-color:  #9ea09e;
     display: inline-block;
     width: 98vw;
     border-radius: 5px;
@@ -23,7 +23,7 @@
 
 body {
     font-family: 'Roboto Slab', arial;
-    background-color: white;
+    background-color: #a1a1a1;
 }
 
 #quizBody {
@@ -42,8 +42,8 @@ a {
 
 button {
     border: none;
-    background-color: #4ee1e6;
-    color: white;
+    background-color: #ffd380;
+    color: black;
     border-radius: 5px;
     padding: 10px 16px 10px 16px;
     font-size: 17px;
@@ -53,7 +53,7 @@ button {
 
 button:hover {
     transition-duration: 0.4s;
-    background-color: #ffd380;
+    background-color: #e69e1a;
 }
 
 #quiz {
