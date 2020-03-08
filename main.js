@@ -53,12 +53,13 @@ next();
 
 //stop the timer to end the quiz 
 function endGame() {
+
 clearInterval(timer);
 
 var quizContent = `
 <h2>Game over!</h2>
 <h3>You got a ` + score +  ` /100!</h3>
-<h3>Score is: ` + score / 20 +  ` questions correct!</h3>
+<h3> ` + score / 20 +  ` questions correct!</h3>
 <input type="text" id="name" placeholder="First name"> 
 <button onclick="setScore()">Set score!</button>`;
 
@@ -67,7 +68,7 @@ document.getElementById("quizBody").innerHTML = quizContent;
 
 //store the scores on local storage
 function setScore() {
-localStorage.setItem("highscore", score);
+localStorage.setItem("timeLeft", timeLeft);
 localStorage.setItem("highscoreName",  document.getElementById('name').value);
 
 getScore();
@@ -77,9 +78,10 @@ getScore();
 function getScore() {
 var quizContent = `
 <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
-<h1>` + localStorage.getItem("highscore") + `</h1><br> 
+<h1>` + localStorage.getItem("timeLeft") + `</h1><br> 
 
-<button onclick="clearScore()">Clear score!</button> <button onclick="resetGame()">Play Again!</button>`;
+<button onclick="clearScore()">Clear score!</button> 
+<button onclick="resetGame()">Play Again!</button>`;
 
 document.getElementById("quizBody").innerHTML = quizContent;
 }
